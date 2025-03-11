@@ -31,8 +31,7 @@ class CupcakeScreenNavigationTest {
     @Test
     fun cupcakeNavHost_verifyStartDestination()
     {
-        assertEquals(CupcakeScreen.Start.name,
-            navController.currentBackStackEntry?.destination?.route)
+        navController.asserCurrentRouteName(CupcakeScreen.Start.name)
 
     }
 
