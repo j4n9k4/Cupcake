@@ -3,6 +3,7 @@ package com.example.cupcake.test
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.example.cupcake.CupcakeApp
@@ -11,6 +12,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import com.example.cupcake.R
 
 
 class CupcakeScreenNavigationTest {
@@ -33,6 +35,13 @@ class CupcakeScreenNavigationTest {
     {
         navController.asserCurrentRouteName(CupcakeScreen.Start.name)
 
+    }
+
+    @Test
+    fun cupcakeNavHost_verifyBackNavigationNotShownOnStartOrderScreen()
+    {
+        val backText = composeTestRule.activity.getString(R.string.back_button)
+        composeTestRule.onNodeWithContentDescription(backText).assertDoesNotExist()
     }
 
 
