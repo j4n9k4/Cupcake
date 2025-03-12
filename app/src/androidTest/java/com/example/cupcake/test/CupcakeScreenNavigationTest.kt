@@ -75,7 +75,6 @@ class CupcakeScreenNavigationTest {
         composeTestRule.onNodeWithText(getFormattedDate())
             .performClick()
 
-
     }
 
     private fun navigateToSummaryScreen()
