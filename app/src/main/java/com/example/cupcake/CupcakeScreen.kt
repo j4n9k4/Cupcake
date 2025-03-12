@@ -142,13 +142,13 @@ fun CupcakeApp(
                     subtotal = uiState.price,
                     options = uiState.pickupOptions,
                     onSelectionChanged = {viewModel.setDate(it)},
-                    onNextButtonClicked = {navController.navigate(CupcakeScreen.Summery.name)},
+                    onNextButtonClicked = {navController.navigate(CupcakeScreen.Summary.name)},
                     onCancelButtonClicked = {
                         cancelOrderAndNavigateToStart(viewModel, navController) },
                     modifier = Modifier.fillMaxHeight()
                 )
             }
-            composable(route = CupcakeScreen.Summery.name){
+            composable(route = CupcakeScreen.Summary.name){
                 val context = LocalContext.current
                 OrderSummaryScreen(
                     orderUiState = uiState,
