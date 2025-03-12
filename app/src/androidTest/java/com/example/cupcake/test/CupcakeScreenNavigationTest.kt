@@ -8,7 +8,6 @@ import androidx.navigation.compose.ComposeNavigator
 import androidx.navigation.testing.TestNavHostController
 import com.example.cupcake.CupcakeApp
 import com.example.cupcake.CupcakeScreen
-import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -25,8 +24,9 @@ class CupcakeScreenNavigationTest {
         composeTestRule.setContent {
             navController = TestNavHostController(LocalContext.current).apply {
                 navigatorProvider.addNavigator(ComposeNavigator())
-                CupcakeApp(navController = navController)
             }
+
+            CupcakeApp(navController = navController)
         }
 
     }
